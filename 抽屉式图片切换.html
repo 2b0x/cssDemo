@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>抽屉式图片切换</title>
+		<style>
+			ul,li,p{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.wrapper{
+				width: 250px;
+			}
+			.list li{
+				height: 35px;
+				overflow: hidden;
+				transition: all .5s;
+			}
+			.list li p{
+			    padding: 7px 10px;
+			    background-color: #fbacac;
+			    color: white;
+				cursor: pointer;
+			}
+			.list li div{
+			    height: 150px;
+			    text-align: center;
+			    line-height: 150px;
+			    border: 1px solid #9ac5dc;
+			}
+			.list li:nth-child(1){
+				height: 187px;
+			}
+			.list li:nth-child(1) p{
+				background-color: #9ac5dc;
+			}
+			.list:hover li{
+				height: 35px !important;
+			}
+			.list:hover li p{
+				background-color: #fbacac;
+			}
+			.list li:hover{
+				height: 187px !important;
+			}
+			.list li:hover p{
+				background-color: #9ac5dc;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<ul class="list">
+				<li>
+					<p>这是标题</p>
+					<div>存放图片</div>
+				</li>
+				<li>
+					<p>这是标题</p>
+					<div>存放图片</div>
+				</li>
+				<li>
+					<p>这是标题</p>
+					<div>存放图片</div>
+				</li>
+				<li>
+					<p>这是标题</p>
+					<div>存放图片</div>
+				</li>
+				<li>
+					<p>这是标题</p>
+					<div>存放图片</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

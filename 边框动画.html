@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>边框动画</title>
+		<style>
+	        .wrapper{
+	            margin: 50px;
+	        }
+	        
+	        .border{
+	            position: relative;
+	            width: 200px;
+	            height: 200px;
+	            background: #ffcccc;
+	        }
+	        .border:before,.border:after{
+	            content: " ";
+	            display: block;
+	            position: absolute;
+	            width:220px;
+	            height:220px;
+	            top: -10px;
+	            left: -10px;
+	            border:2px solid #ffcccc;
+	            box-sizing: border-box;
+	            -webkit-animation: clipAni 4s infinite linear;
+	        }
+	        .border:before{
+	            /*-webkit-animation-delay: -2s;*/
+	        }
+	        @keyframes  clipAni{
+	            0%,100%{
+	                clip:rect(0px,220px,220px,217px);
+	            }
+	            25%{
+	                clip:rect(0px,220px,3px,0px);
+	            }
+	            50%{
+	                clip:rect(0px,3px,220px,0px);
+	            }
+	            75%{
+	                clip:rect(217px,220px,220px,0px);
+	            }            
+	        }
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+		    <div class="border"></div>
+		</div>
+	</body>
+</html>
