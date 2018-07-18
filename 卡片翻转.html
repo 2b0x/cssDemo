@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>卡片翻转</title>
+		<style>
+			/*设置盒子大小*/
+			.flipper, .front, .back {
+				width: 320px;
+				height: 480px;
+			}
+			/*鼠标滑过容器盒子时其翻转180度*/
+			.flipper:hover{
+				transform: rotateY(180deg);
+			}
+			/*设置盒子翻转的时间*/
+			.flipper {
+				transition: 0.6s;
+				transform-style: preserve-3d;/*使被转换的子元素保留其3D转换*/
+				position: relative;
+			}
+			.front, .back {
+				backface-visibility: hidden;/*设置自身3D属性的背面不可见*/
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			/*设置正面初始翻转角度为0即没有翻转，背面初始翻转角度为180*/
+			.front {
+				z-index: 2;
+				transform: rotateY(0deg);    
+				background-color: #ffc89c;
+			}
+			.back {
+				transform: rotateY(180deg);    
+				background-color: #67bfd2;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<div class="flipper">
+			<div class="front">
+				<!-- front content -->
+				this is front
+			</div>
+			<div class="back">
+				<!-- back content -->
+				this is back
+			</div>
+		</div>
+	</body>
+</html>
